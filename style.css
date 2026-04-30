@@ -143,15 +143,85 @@ body {
   cursor: pointer;
 }
 
-.tasks{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.tasks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.tasks h2{
-    font-size: 16px;
-    font-weight: 400;
-    font-family: "Heebo",sans-serif;
-    color: #c78080;
+.tasks h2 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Heebo", sans-serif;
+  color: #c78080;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.tasks p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Heebo", sans-serif;
+  color: #f7eded;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tasks .btnTasks {
+  width: 455px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f7eded;
+  padding-bottom: 15px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.btnTasks h4 {
+  font-size: 17px;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #f7eded;
+}
+
+.btnTasks i {
+  padding: 5px;
+  border: 1px solid #bd6a6a;
+  background-color: #bd6a6a;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #f7eded;
+}
+
+.tasks_input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 20px;
+  width: 455px;
+  height: 50px;
+  border: 1px dashed #f7eded;
+  border-radius: 5px;
+  background-color: #a14343;
+}
+
+.tasks_input span {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #dfbcbc;
+  border-radius: 50%;
+  background-color: #dfbcbc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9d4242;
+  text-align: center;
+}
+.tasks_input h4 {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Heebo", sans-serif;
+  color: #f7eded;
 }
