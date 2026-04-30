@@ -9,14 +9,14 @@ body {
 }
 
 .container {
-    max-width: 1300px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px 0;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
 .navbar {
-    background-color: #af4949;
+  background-color: #af4949;
 }
 
 .nav {
@@ -79,4 +79,13 @@ body {
   border-radius: 5px;
   font-size: 20px;
   color: #f7eded;
+}
+
+.cartPomo{
+    width: 400px;
+    height: 300px;
+    background-color: #b75c5c;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px 40px;
 }
