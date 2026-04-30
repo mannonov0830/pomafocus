@@ -6,14 +6,17 @@
 }
 body {
   font-family: "Heebo", sans-serif;
-  background-color: #af4949;
 }
 
 .container {
-  max-width: 1300px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px 0;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.navbar {
+    background-color: #af4949;
 }
 
 .nav {
