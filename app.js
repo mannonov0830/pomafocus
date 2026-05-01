@@ -1,37 +1,53 @@
 let reportBtn = document.getElementById("reportBtn")
 let reportMenu = document.getElementById("reportMenu")
-let closeBtn = document.getElementById("closeBtn")
 
 let reportBtnn = document.getElementById("reportBtnn")
 let reportMenuu = document.getElementById("reportMenuu")
 
-// hamma menu'larni yopish funksiyasi
-function closeAllMenus() {
+let dropMenu = document.getElementById("dropMenu")
+let dawnMenu = document.getElementById("dawnMenu")
+
+let allMenus = [reportMenu, reportMenuu, dawnMenu]
+
+let closeBtn = document.getElementById("closeBtn")
+
+closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation()
     reportMenu.classList.remove("show")
-    reportMenuu.classList.remove("show")
+})
+
+function closeAllMenus() {
+    allMenus.forEach(menu => menu.classList.remove("show"))
 }
 
-// first dropdown
+
 reportBtn.addEventListener("click", (e) => {
     e.stopPropagation()
     closeAllMenus()
     reportMenu.classList.toggle("show")
 })
 
-// second dropdown
+
 reportBtnn.addEventListener("click", (e) => {
     e.stopPropagation()
     closeAllMenus()
     reportMenuu.classList.toggle("show")
 })
 
-// close button
-closeBtn.addEventListener("click", (e) => {
+
+dropMenu.addEventListener("click", (e) => {
     e.stopPropagation()
+    closeAllMenus()
+    dawnMenu.classList.toggle("show")
+})
+
+document.addEventListener("click", () => {
     closeAllMenus()
 })
 
-// outside click
-window.addEventListener("click", () => {
-    closeAllMenus()
+
+allMenus.forEach(menu => {
+    menu.addEventListener("click", (e) => {
+        e.stopPropagation()
+    })
 })

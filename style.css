@@ -247,6 +247,7 @@ body {
   background-color: #fff;
   display: none;
   top: 43px;
+  left: -20px;
   cursor: default;
   padding: 10px 10px;
 }
@@ -376,14 +377,14 @@ body {
   position: relative;
   cursor: pointer;
   display: inline-block;
-}
+} 
 
 .dawnn {
   width: 300px;
   height: 220px;
   position: absolute;
   top: 43px;
-  left: 0;
+  left: -145px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -461,4 +462,34 @@ body {
   margin-bottom: 10px;
   background-color: #45474b;
   cursor: pointer;
+}
+
+.menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.dawnMenu {
+  position: absolute;
+  width: 120px;
+  height: 110px;
+  background-color: #fff;
+  border-radius: 6px;
+  top: 43px;
+  left: -80px;
+  padding-left: 10px;
+  display: none;
+}
+.dawnMenu h5 {
+  font-size: 16px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.dawnMenu.show {
+  display: block;
 }
