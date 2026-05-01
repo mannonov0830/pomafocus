@@ -230,3 +230,51 @@ body {
   font-family: "Heebo", sans-serif;
   color: #f7eded;
 }
+
+
+/* drop-menu */
+
+.drop {
+  position: relative;
+  cursor: default;
+  padding: 20px;
+}
+
+.dawn {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  border: 1px solid red;
+  border-radius: 8px;
+  background-color: #f7eded;
+  display: none;
+  top: 43px;
+  cursor: default;
+  padding: 10px 10px;
+}
+.dawn.show {
+  display: block;
+}
+
+.closeBtn{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.closeBtn i{
+  width: 30px;
+  height: 30px;
+  color: #8a8a8a;
+  border: 1px solid #f7eded;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-top: -5px;
+}
+.closeBtn i:hover{
+  background-color: #dbd9d9;
+  color: gray;
+  cursor: pointer;
+}
