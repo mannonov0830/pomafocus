@@ -1,53 +1,97 @@
-let reportBtn = document.getElementById("reportBtn")
-let reportMenu = document.getElementById("reportMenu")
+let timeDisplay = document.getElementById("time")
+let startBtn = document.querySelector(".start")
+let body = document.body
+let modes = document.querySelectorAll(".pomaText h4")
+let cartPomo = document.querySelector(".cartPomo") 
 
-let reportBtnn = document.getElementById("reportBtnn")
-let reportMenuu = document.getElementById("reportMenuu")
+let timer = null
+let isRunning = false
 
-let dropMenu = document.getElementById("dropMenu")
-let dawnMenu = document.getElementById("dawnMenu")
 
-let allMenus = [reportMenu, reportMenuu, dawnMenu]
+let settings = {
+    pomodoro: {
+        time: 50 * 60,
+        body: "#af4949",
+        cart: "#b75c5c"
+    },
+    short: {
+        time: 25 * 60,
+        body: "#297479",
+        cart: "#3f8287"
+    },
+    long: {
+        time: 15 * 60,
+        body: "#2f6a95",
+        cart: "#4479a0"
+    }
+}
 
-let closeBtn = document.getElementById("closeBtn")
+let currentMode = "pomodoro"
+let seconds = settings[currentMode].time
 
-closeBtn.addEventListener("click", (e) => {
-    e.stopPropagation()
-    reportMenu.classList.remove("show")
-})
 
-function closeAllMenus() {
-    allMenus.forEach(menu => menu.classList.remove("show"))
+function formatTime(sec) {
+    let min = Math.floor(sec / 60)
+    let s = sec % 60
+    return `${String(min).padStart(2, "0")} : ${String(s).padStart(2, "0")}`
+}
+
+function updateUI() {
+    timeDisplay.textContent = formatTime(seconds)
+
+    let theme = settings[currentMode]
+
+    body.style.backgroundColor = theme.body
+    document.querySelector(".navbar").style.backgroundColor = theme.body
+    cartPomo.style.backgroundColor = theme.cart
+}
+function startTimer() {
+    timer = setInterval(() => {
+        if (seconds > 0) {
+            seconds--
+            updateUI()
+        } else {
+            clearInterval(timer)
+            isRunning = false
+            startBtn.textContent = "Start"
+        }
+    }, 1000)
 }
 
 
-reportBtn.addEventListener("click", (e) => {
-    e.stopPropagation()
-    closeAllMenus()
-    reportMenu.classList.toggle("show")
+startBtn.addEventListener("click", () => {
+    if (!isRunning) {
+        startTimer()
+        startBtn.textContent = "Pause"
+        isRunning = true
+    } else {
+        clearInterval(timer)
+        startBtn.textContent = "Start"
+        isRunning = false
+    }
 })
 
 
-reportBtnn.addEventListener("click", (e) => {
-    e.stopPropagation()
-    closeAllMenus()
-    reportMenuu.classList.toggle("show")
-})
+modes.forEach(btn => {
+    btn.addEventListener("click", () => {
+        modes.forEach(b => b.classList.remove("active"))
+        btn.classList.add("active")
 
+        clearInterval(timer)
+        isRunning = false
+        startBtn.textContent = "Start"
 
-dropMenu.addEventListener("click", (e) => {
-    e.stopPropagation()
-    closeAllMenus()
-    dawnMenu.classList.toggle("show")
-})
+        if (btn.textContent.includes("Pomodora")) {
+            currentMode = "pomodoro"
+        } else if (btn.textContent.includes("Short")) {
+            currentMode = "short"
+        } else {
+            currentMode = "long"
+        }
 
-document.addEventListener("click", () => {
-    closeAllMenus()
-})
-
-
-allMenus.forEach(menu => {
-    menu.addEventListener("click", (e) => {
-        e.stopPropagation()
+        seconds = settings[currentMode].time
+        updateUI()
     })
 })
+
+updateUI()

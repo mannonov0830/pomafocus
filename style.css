@@ -7,6 +7,11 @@
 body {
   font-family: "Heebo", sans-serif;
 }
+body,
+.navbar,
+.cartPomo {
+  transition: background-color 0.4s ease;
+}
 
 .container {
   max-width: 1300px;
@@ -377,7 +382,7 @@ body {
   position: relative;
   cursor: pointer;
   display: inline-block;
-} 
+}
 
 .dawnn {
   width: 300px;
@@ -492,4 +497,23 @@ body {
 
 .dawnMenu.show {
   display: block;
+}
+
+.pomaText h4.active {
+  background-color: #fff;
+  color: #af4949;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+.cartPomo {
+  transition: background-color 0.4s ease;
+}
+
+.cartPomo {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
 }
